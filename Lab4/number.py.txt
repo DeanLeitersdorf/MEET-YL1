@@ -1,0 +1,43 @@
+class Integer(object):
+    def __init__(self,number,isNegative):
+        self.Int = number
+        if(isNegative):
+            self.Int = -number
+        
+    def display(self):
+        
+        print self.Int
+        
+    def operation(n1, n2, o):
+        if (o=="add"):
+            return n1.Int+n2.Int
+        if (o=="subtract"):
+            return n1.Int-n2.Int
+        if (o=="divide"):
+            return n1.Int/n2.Int
+        if (o=="multiply"):
+            return n1.Int*n2.Int
+
+class NegInt(Integer):
+    def __init__(self, number):
+        super(NegInt, self).__init__(number, True)
+    def display(self):
+        print "Negative is: "
+        Integer.display(self)
+        
+        
+if __name__=="__main__":
+    
+    
+    
+    test = Integer(input("Please enter a positive number: "), False)
+    
+    test2 = NegInt(input("Please enter a negative number: "))
+    
+    List = [test, test2]
+    
+    for i in List:
+        i.display()
+    
+    
+    print Integer.operation(test, test2, raw_input("Please insert operation: "))
