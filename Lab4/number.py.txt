@@ -4,9 +4,8 @@ class Integer(object):
         if(isNegative):
             self.Int = -number
         
-    def display(self, isPositive):
-        if (isPositive):
-            print "Your positive number: "
+    def display(self):
+        
         print self.Int
         
     def operation(n1, n2, o):
@@ -23,8 +22,8 @@ class NegInt(Integer):
     def __init__(self, number):
         super(NegInt, self).__init__(number, True)
     def display(self):
-        print "Your negative number: "
-        Integer.display(self, False)
+        print "Negative is: "
+        Integer.display(self)
         
         
 if __name__=="__main__":
@@ -42,8 +41,3 @@ if __name__=="__main__":
     
     
     print Integer.operation(test, test2, raw_input("Please insert operation: "))
-    
-    
-
-    
-        
